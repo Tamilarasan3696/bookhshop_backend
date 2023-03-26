@@ -3,15 +3,19 @@ import { MongoClient} from "mongodb";
 import * as dotenv from 'dotenv';
 import { bookRouter } from "./routes/book.js";
 import { userRouter } from "./routes/user.js";
+import cors from "cors";
+
 dotenv.config();
 
 
 
 const app = express();
+app.use(cors());
 const PORT=process.env.PORT;
 
 //middleware
 app.use(express.json());
+
 
 
 
