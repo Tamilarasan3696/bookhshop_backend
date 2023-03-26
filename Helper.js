@@ -6,7 +6,7 @@ export async function AddBook(newBook) {
   return await client
     .db("bw41")
     .collection("book")
-    .insertMany(newBook);
+    .insertOne(newBook);
 }
 export async function getBooks(req) {
   return await client.db("bw41").collection("book").find(req.query).toArray();
