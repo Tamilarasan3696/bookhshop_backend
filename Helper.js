@@ -8,6 +8,14 @@ export async function AddBook(newBook) {
     .collection("book")
     .insertOne(newBook);
 }
+export async function AddMovie(newMovie) {
+  return await client
+    .db("bw41")
+    .collection("movie")
+    .insertOne(newMovie);
+}
+
+
 export async function getBooks(req) {
   return await client.db("bw41").collection("book").find(req.query).toArray();
 }
