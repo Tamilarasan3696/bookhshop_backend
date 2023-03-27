@@ -1,6 +1,6 @@
 import  express  from "express";
 const router = express.Router();
-import { GetbyId, deletebyId, EditbyId, getBooks, AddBook } from "../Helper.js";
+import { GetbyId, deletebyId, EditbyId, getBooks, AddBook,AddMovie } from "../Helper.js";
 import {auth} from "../middleware/auth.js"
 
 
@@ -50,6 +50,15 @@ router.post('/', async(req, res)=> {
   const result= await AddBook(newBook)
   res.send(result);
 })
+// post movie
+
+router.post('/movie', async(req, res)=> {
+  const newMovie = req.body;
+  console.log(newMovie)
+  const result= await AddMovie(newMovie)
+  res.send(result);
+}) 
+
  
 
 export const bookRouter = router
