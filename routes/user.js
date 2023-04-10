@@ -7,7 +7,7 @@ import jwt from "jsonwebtoken";
 
 router.post('/singup', async(req, res)=> {
     const {username,email,password} = req.body;
-    const UserExit= await ValidationUser(username)
+    const UserExit= await ValidationUser(email)
     if(UserExit){
  res.status(400).send({message:"user already exit"})
 return;
