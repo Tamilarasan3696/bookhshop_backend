@@ -6,7 +6,7 @@ import jwt from "jsonwebtoken";
 
 
 router.post('/singup', async(req, res)=> {
-    const {username,password} = req.body;
+    const {username,email,password} = req.body;
     const UserExit= await ValidationUser(username)
     if(UserExit){
  res.status(400).send({message:"user already exit"})
@@ -24,8 +24,8 @@ return;
   })
    
   router.post('/login', async(req, res)=> {
-    const {username,password} = req.body;
-    const Exituser= await ValidationUser(username)
+    const {email,password} = req.body;
+    const Exituser= await ValidationUser(email)
     if(!Exituser){
         res.status(404).send({message:"user not exit"})
 return;
