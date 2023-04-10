@@ -5,28 +5,22 @@ import bcrypt from "bcrypt";
 export async function AddBook(newBook) {
   return await client
     .db("bw41")
-    .collection("book")
-    .insertOne(newBook);
-}
-export async function AddMovie(newMovie) {
-  return await client
-    .db("bw41")
     .collection("movie")
-    .insertOne(newMovie);
+    .insertOne(newBook);
 }
 
 
 export async function getBooks(req) {
-  return await client.db("bw41").collection("book").find(req.query).toArray();
+  return await client.db("bw41").collection("movie").find(req.query).toArray();
 }
 export async function EditbyId(id, updateBook) {
-  return await client.db("bw41").collection("book").updateOne({ id: id }, { $set: updateBook });
+  return await client.db("bw41").collection("movie").updateOne({ id: id }, { $set: updateBook });
 }
 export async function deletebyId(id) {
-  return await client.db("bw41").collection("book").deleteOne({ id: id });
+  return await client.db("bw41").collection("movie").deleteOne({ id: id });
 }
 export async function GetbyId(id) {
-  return await client.db("bw41").collection("book").findOne({ id: id });
+  return await client.db("bw41").collection("movie").findOne({ id: id });
 }
 
 export async function genpassword(password){
