@@ -39,9 +39,9 @@ export async function CreatUser(username,hashed){
   .insertOne({username:username,password:hashed});
 }
 
-export async function ValidationUser(username){
+export async function ValidationUser(email){
   return await client
   .db("bw41")
   .collection("user")
-  .findOne({username:username})
+  .findOne({email:email})
 }
