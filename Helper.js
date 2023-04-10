@@ -32,11 +32,11 @@ export async function genpassword(password){
 
 
 
-export async function CreatUser(username,hashed){
+export async function CreatUser(username,email,hashed){
   return await client
   .db("bw41")
   .collection("user")
-  .insertOne({username:username,password:hashed});
+  .insertOne({username:username,email:email,password:hashed});
 }
 
 export async function ValidationUser(email){
