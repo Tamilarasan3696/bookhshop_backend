@@ -19,7 +19,7 @@ return;
    }
 
     const hashed=await genpassword(password)
-    const result= await CreatUser(username,hashed)
+    const result= await CreatUser(username,email,hashed)
     res.send(result);
   })
    
