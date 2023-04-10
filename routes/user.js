@@ -5,7 +5,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 
-router.post('/singup', async(req, res)=> {
+router.post('/signup', async(req, res)=> {
     const {username,email,password} = req.body;
     const UserExit= await ValidationUser(email)
     if(UserExit){
