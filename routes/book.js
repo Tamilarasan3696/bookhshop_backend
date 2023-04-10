@@ -52,12 +52,6 @@ router.post('/', async(req, res)=> {
 })
 // post movie
 
-router.post('/movie', async(req, res)=> {
-  const newMovie = req.body;
-  console.log(newMovie)
-  const result= await AddMovie(newMovie)
-  res.send(result);
-}) 
 
  
 
