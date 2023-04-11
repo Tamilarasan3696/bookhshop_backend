@@ -38,8 +38,8 @@ router.get("/", async(req,res)=>{
   if(req.query.rating){
     req.query.rating  = +req.query.rating
   }
-  const filterBook= await getBooks(req);
-  res.send(filterBook);
+  const filterMovie= await getMovies(req);
+  res.send(filterMovie);
 });
  
 // post movie
@@ -47,7 +47,7 @@ router.get("/", async(req,res)=>{
 router.post('/', async(req, res)=> {
   const newMovie = req.body;
   console.log(newMovie)
-  const result= await AddBook(newMovie)
+  const result= await AddMovie(newMovie)
   res.send(result);
 })
 
