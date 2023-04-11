@@ -2,7 +2,7 @@ import  express  from "express";
 import cors from "cors";
 import { MongoClient} from "mongodb";
 import * as dotenv from 'dotenv';
-import { bookRouter } from "./routes/book.js";
+import { movieRouter } from "./routes/book.js";
 import { userRouter } from "./routes/user.js";
 
 
@@ -39,7 +39,7 @@ app.get('/', (req, res)=> {
   res.send('Hello World TAMILAARASAN');
 })
 
-app.use("/book", bookRouter)
+app.use("/movie", movieRouter)
 
 app.use("/user",userRouter)
 
