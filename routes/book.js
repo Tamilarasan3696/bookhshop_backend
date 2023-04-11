@@ -1,6 +1,6 @@
 import  express  from "express";
 const router = express.Router();
-import { GetbyId, deletebyId, EditbyId, getBooks, AddBook } from "../Helper.js";
+import { GetbyId, deletebyId, EditbyId, getMovies, AddMovie } from "../Helper.js";
 import {auth} from "../middleware/auth.js"
 
 
