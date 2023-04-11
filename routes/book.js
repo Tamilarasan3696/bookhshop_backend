@@ -14,7 +14,7 @@ const lists= await GetbyId(id)
 res.send(lists);
 })
 
-// delete book by id
+// delete movie by id
 router.delete('/:id',   async (req,res)=>{
   const {id}=req.params;
 // const lists= list.find((bk)=>bk.id ==id);
@@ -25,8 +25,8 @@ lists?res.send(lists):res.status(404).send({message:"book not found"})
 //update methode
 router.put('/:id',   async (req,res)=>{
   const {id}=req.params;
-  const updateBook= req.body;
-const lists= await EditbyId(id, updateBook)
+  const updateMovie= req.body;
+const lists= await EditbyId(id, updateMovie)
 res.send(lists);
 })
 
@@ -42,15 +42,15 @@ router.get("/", async(req,res)=>{
   res.send(filterBook);
 });
  
-// post methode
+// post movie
 
 router.post('/', async(req, res)=> {
-  const newBook = req.body;
-  console.log(newBook)
-  const result= await AddBook(newBook)
+  const newMovie = req.body;
+  console.log(newMovie)
+  const result= await AddBook(newMovie)
   res.send(result);
 })
-// post movie
+
 
 
  
