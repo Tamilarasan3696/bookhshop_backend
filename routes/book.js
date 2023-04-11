@@ -55,4 +55,4 @@ router.post('/', async(req, res)=> {
 
  
 
-export const bookRouter = router
+export const movieRouter = router
