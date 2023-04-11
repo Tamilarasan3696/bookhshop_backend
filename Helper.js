@@ -2,18 +2,18 @@ import { client } from "./index.js";
 import bcrypt from "bcrypt";
 
 
-export async function AddBook(newBook) {
+export async function AddMovie(newMovie) {
   return await client
     .db("bw41")
     .collection("movie")
-    .insertOne(newBook);
+    .insertOne(newMovie);
 }
 
 
-export async function getBooks(req) {
+export async function getMovies(req) {
   return await client.db("bw41").collection("movie").find(req.query).toArray();
 }
-export async function EditbyId(id, updateBook) {
+export async function EditbyId(id, updateMovie) {
   return await client.db("bw41").collection("movie").updateOne({ id: id }, { $set: updateBook });
 }
 export async function deletebyId(id) {
