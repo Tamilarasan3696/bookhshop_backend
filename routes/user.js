@@ -20,7 +20,7 @@ return;
 
     const hashed=await genpassword(password)
     const result= await CreatUser(name,email,hashed)
-    res.send(result);
+    res.send({message:"succesfully signup", result});
   })
    
   router.post('/login', async(req, res)=> {
