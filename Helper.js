@@ -14,7 +14,7 @@ export async function getMovies(req) {
   return await client.db("bw41").collection("movie").find(req.query).toArray();
 }
 export async function EditbyId(id, updateMovie) {
-  return await client.db("bw41").collection("movie").updateOne({ id: id }, { $set: updateBook });
+  return await client.db("bw41").collection("movie").updateOne({ id: id }, { $set: updateMovie });
 }
 export async function deletebyId(id) {
   return await client.db("bw41").collection("movie").deleteOne({ id: id });
